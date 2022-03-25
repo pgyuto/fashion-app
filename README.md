@@ -1,24 +1,46 @@
-# README
+## users
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column            |Type  |Options                  |
+|------------------|------|-------------------------|
+|nickname          |string|null: false              |
+|email             |string|null: false, unique: true|
+|encrypted_password|string|null: false              |
 
-Things you may want to cover:
+### Association
+has_many :items
+has_many :favorites
+has_one :money
 
-* Ruby version
+## items
 
-* System dependencies
+|Column      |Type      |Options                       |
+|------------|----------|------------------------------|
+|text        |text      |null: false                   |
+|category_id |integer   |null: false                   |
+|color_id    |integer   |null: false                   |
+|maker       |string    |                              |
+|user        |references|null: false, foreign_key: true|
+|favorite    |references|null: false, foreign_key: true|
 
-* Configuration
+### Association
+belongs_to :user
+belongs_to :favorite
 
-* Database creation
+## favorites
 
-* Database initialization
+|Column |Type      |Options                       |
+|-------|----------|------------------------------|
+|user   |references|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+has_many :items
+belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## moneys
+|Column       |Type      |Options                       |
+|-------------|----------|------------------------------|
+|balance      |integer   |null: false                   |
+|user         |references|null: false, foreign_key: true|
 
-* Deployment instructions
-
-* ...
+### Association
+belongs_to :buy
