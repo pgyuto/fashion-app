@@ -3,11 +3,9 @@ class PagesController < ApplicationController
   def index
   end
 
-
   private
+
   def move_to_item
-    if user_signed_in?
-      redirect_to items_path
-    end
+    redirect_to items_path if user_signed_in?
   end
 end

@@ -32,24 +32,24 @@ RSpec.describe User, type: :model do
         after_user = FactoryBot.build(:user)
         after_user.email = @user.email
         after_user.valid?
-        expect(after_user.errors.full_messages).to include("Email has already been taken")
+        expect(after_user.errors.full_messages).to include('Email has already been taken')
       end
       it 'emailは＠を含まないと登録できない' do
         @user.email = 'test'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
       it 'passwordが５文字以下では登録できない' do
         @user.password = 'a1234'
         @user.password_confirmation = 'a1234'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
       it 'passwordが129文字以上では登録できない' do
         @user.password = Faker::Lorem.characters(number: 129, min_alpha: 4, min_numeric: 1)
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is too long (maximum is 128 characters)")
+        expect(@user.errors.full_messages).to include('Password is too long (maximum is 128 characters)')
       end
       it 'passwordとpassword_confirmationが不一致では登録できない' do
         @user.password = 'test12'
@@ -61,20 +61,20 @@ RSpec.describe User, type: :model do
         @user.password = 'あいうえお１'
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
       it 'passwordが英字だけでは登録できない' do
         @user.password = 'usertest'
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
       it 'passwordが数字だけでは登録できない' do
         @user.password = '123456'
         @user.password_confirmation = @user.password
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
     end
   end
-end 
+end
