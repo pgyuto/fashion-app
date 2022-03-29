@@ -8,14 +8,16 @@
 <ul class= 'item-lists' >
   <% @items.each do |item| %>
     <li class='list'>
+      <%= link_to '#' do %>
         <div class='item-img-content'>
           <%= image_tag item.image, class: "item-img" %>
         </div>
         <div class='item-info'>
-          <div class='item-price'>
+          <div class='item-text'>
             <span><%= item.text %></span>
           </div>
         </div>
+      <% end %>
     </li>
   <% end %>
 </ul>
