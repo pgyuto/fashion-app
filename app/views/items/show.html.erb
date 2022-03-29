@@ -1,0 +1,45 @@
+<%= render "shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+    <div class="item-img-content">
+      <%= image_tag @item.image ,class:"item-box-img" %>
+    </div>
+          <%= link_to "編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+          <p class="or-text">or</p>
+          <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
+
+    <div class="item-explain-box">
+      <span><%= @item.text %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @item.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カラー</th>
+          <td class="detail-value"><%= @item.color.name %></td>
+        </tr>
+        <% if @item.maker.present? %>
+          <tr>
+            <th class="detail-item">meker</th>
+            <td class="detail-value"><%= @item.maker %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+  
+  <a href="#" class="another-item"><%= @item.category.name %>をもっと見る</a>
+  
+</div>
