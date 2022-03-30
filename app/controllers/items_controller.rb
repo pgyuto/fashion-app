@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   def index
-    @items = current_user.items.order('created_at DESC')
+    @items = current_user.items.with_attached_image.order('created_at DESC')
   end
 
   def new
