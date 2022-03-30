@@ -1,0 +1,18 @@
+<%= render "shared/header" %>
+
+<div class="items-sell-main">
+    <h2 class="items-sell-title">今月は</h2>
+    <%= form_with model: @money,url: moneys_path, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="new-items">
+          詳細
+          <span class="indispensable">必須</span>
+        <%= f.text_area :balance, class:"items-text", id:"item-info", placeholder:"￥0 ~ ￥999,999 の間で入力可能 (入力例:9999)",rows:"1" ,maxlength:"6" %>
+    </div>
+    <div class="sell-btn-contents">
+      <%= f.submit "設定" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <% end %>
+</div>
