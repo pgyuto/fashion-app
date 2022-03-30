@@ -1,0 +1,19 @@
+.money-counter {
+  background-color: aliceblue;
+  border: black solid 2px;
+  margin-left: 10vw;
+  width: 80vw;
+  height: 50vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.money-number {
+  font-size: 100px;
+}
+
+.info-btn {
+  margin-left: 10vw;
+}
