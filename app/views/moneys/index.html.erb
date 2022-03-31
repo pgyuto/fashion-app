@@ -1,7 +1,18 @@
 <%= render "shared/header" %>
-<div class="btn btn-secondary info-btn">設定</div>
+<% if current_user.money.blank? %>
+<%=link_to '設定',new_money_path, class:"btn btn-secondary info-btn" %>
+<% end %>
+<% if current_user.money.present? %>
 <div class="btn btn-secondary info-btn">編集</div>
+<% end %>
 <div class = "money-counter">
-  <div class = "money-number">--- 円
+  <div class = "money-number">
+  <% if current_user.money.present? %>
+  <%= current_user.money.balance %> 円
+  <% else %>
+  <%= link_to new_money_path, class:"money-number" do %>
+  <div>---   円</div>
+  <% end %>
+  <% end %>
   </div>
 </div>

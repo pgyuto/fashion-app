@@ -12,8 +12,11 @@
 
 .money-number {
   font-size: 100px;
+  text-decoration: none;
+  color: black;
 }
 
 .info-btn {
   margin-left: 10vw;
 }
+
