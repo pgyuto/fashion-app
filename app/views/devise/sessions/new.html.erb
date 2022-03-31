@@ -1,23 +1,23 @@
-<body class="text-center login"> 
-  <main class="form-signin">
+<div class="login-page"> 
+  <div class="login-form">
     <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-      <h1 class="h3 mb-3 fw-normal">ログイン</h1>
+      <h1 class="login-text">ログイン</h1>
 
-      <div class='login-flash-message mb-3'>
+      <div class='login-flash-message'>
         <%= flash[:notice] %>
         <%= flash[:alert] %>
       </div>
 
-      <div class="form-floating">
-        <%= f.email_field :email, class:"form-control mb-4", id:"floatingInput", placeholder:"name@example.com",autofocus: true%>
+      <div class="form-floating email-form">
+        <%= f.email_field :email, class:"form-control", id:"floatingInput", placeholder:"name@example.com",autofocus: true%>
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating">
-        <%= f.password_field :password, class:"form-control mb-5", id:"floatingPassword", placeholder:"Password" %>
+        <%= f.password_field :password, class:"form-control", id:"floatingPassword", placeholder:"Password" %>
         <label for="floatingPassword">Password</label>
       </div>
-      <%= f.submit "ログイン", class:"w-100 btn btn-lg btn-primary mb-3 mt-3" %>
+      <%= f.submit "ログイン", class:"w-100 btn btn-lg btn-outline-dark login-btn" %>
     <% end %>
-    <%= link_to '戻る', pages_path, class:"w-100 btn btn-lg btn-primary" %>
-  </main>
-</body>
+    <%= link_to '戻る', pages_path, class:"w-100 btn btn-lg btn-outline-dark" %>
+  </div>
+</div>

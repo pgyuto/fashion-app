@@ -1,21 +1,24 @@
+// 背景
 .welcome {
   background-image: image-url('back-image.png');
   height: 100vh;
 }
 
+// タイトル
 .title {
   text-align: center;
   font-size: 200px;
   margin-bottom: 10vh;
+  color: #333;
 }
 
-
+// 新規登録、ログインボタン
 .register-list {
   width: 25vw;
   margin: 0 auto;
 }
 
 .login-btn {
-  margin-bottom: 5vh;
+  margin: 3vh 0 5vh;
 }
 
