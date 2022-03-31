@@ -1,4 +1,5 @@
 class MoneysController < ApplicationController
+  before_action :set_money, only: [:edit, :update, :destroy]
   def index
     @money = current_user.money
   end
@@ -17,16 +18,19 @@ class MoneysController < ApplicationController
   end
 
   def edit
-    @money = current_user.money
   end
 
   def update
-    @money = current_user.money
     if @money.update(money_params)
       redirect_to action: :index
     else
       render :edit
     end
+  end
+
+  def destroy
+    @money.destroy
+    redirect_to action: :index
   end
 
   private
@@ -37,4 +41,7 @@ class MoneysController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
+  def set_money
+    @money = current_user.money
+  end
 end
