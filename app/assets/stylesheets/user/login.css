@@ -18,8 +18,9 @@
 /* ログイン文字 */
 .login-text {
   text-align: center;
+  margin-bottom: 5vh;
 }
 /* emailフォーム */
 .email-form {
-  margin: 5vh 0 3vh;
+  margin-bottom:3vh;
 }
