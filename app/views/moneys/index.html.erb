@@ -10,11 +10,14 @@
   <% if current_user.money.present? %>
   <%= link_to edit_money_path(@money.id), class:"money-number" do %>
   <%= @money.balance %> 円
+  <%= link_to money_path(@money.id), method: :delete ,class: 'purchase-btn' do %>
+  <%= image_tag 'shirt.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <% end %>
   <% end %>
   <% else %>
   <%= link_to new_money_path, class:"money-number" do %>
   <div>---   円</div>
   <% end %>
-  <% end %>
   </div>
+  <% end %>
 </div>
