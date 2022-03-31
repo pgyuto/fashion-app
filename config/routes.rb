@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :pages, only: :index
   resources :items
-  resources :moneys, only: [:index, :new, :create]
+  resources :moneys, only: [:index, :new, :create, :edit, :update]
 end
