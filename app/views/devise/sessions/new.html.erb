@@ -9,11 +9,11 @@
       </div>
 
       <div class="form-floating email-form ">
-        <%= f.email_field :email, class:"form-control ", id:"floatingInput", placeholder:"name@example.com",autofocus: true%>
+        <%= f.email_field :email, class:"form-control", id:"floatingInput", placeholder:"name@example.com",autofocus: true%>
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating">
-        <%= f.password_field :password, class:"form-control", id:"floatingPassword", placeholder:"Password" %>
+        <%= f.password_field :password, class:"form-control" , id:"floatingPassword", placeholder:"Password" %>
         <label for="floatingPassword">Password</label>
       </div>
       <%= f.submit "ログイン", class:"w-100 btn btn-lg btn-outline-dark login-btn" %>

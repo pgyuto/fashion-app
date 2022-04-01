@@ -24,3 +24,10 @@
 .email-form {
   margin-bottom:3vh;
 }
+
+.form-control:focus {
+  /*フォーカスした時に影をつける*/
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4) !important;
+  /*フォーカスした時に枠線を太く濃く*/
+  border: solid 1px black !important;
+  }
