@@ -1,6 +1,6 @@
 .purchase-btn {
   width: 120px;
-  background: #3ccace;
+  background: gray;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
@@ -11,12 +11,13 @@
 }
 
 .purchase-btn2 {
-  width: 120px;
-  background: #3ccace;
+  width: 100px;
+  height: 100px;
+  background: gray;
   text-align: center;
   border-radius: 100%;
   bottom: 32px;
-  right: 500px;
+  right: 170px;
   position: fixed;
   padding: 15px;
   text-decoration: none;
@@ -33,29 +34,31 @@
   width: 60%;
 }
 
-/* */
-
-.item-lists {
+/* item */
+.item-list {
   width: 100vw;
   display: flex;
+  padding-top: 5vh;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.item-lists>.list {
-  width: 37vh;
-  padding: 1vw;
-  background-color: #FFF;
+.card {
+  width: 23vw !important;
+  height: 50vh !important;
+  margin: 1vh 0.5vw !important;
 }
 
-
-.item-img-content {
-  position: relative;
+.card-img-top {
+  height: 40vh;
 }
 
-.item-img {
-  width: 33vh;
-  height: 33vh;
+.card-body {
+  border-bottom-right-radius: calc(0.25rem - 1px);
+  border-bottom-left-radius: calc(0.25rem - 1px);
+  background-color: #333;
+  display: flex;
+  align-items: center;
 }
 
 /* 検索フォーム */
@@ -80,6 +83,12 @@
   border: 0;
   margin-left: 0.5vw;
   border-radius: 10%;
+  background-color: rgba(0,0,0,0.4);
+  transition: all 0.3s;
+}
+
+.search-button:hover {
+  background-color: black;
 }
 
 .search-icon {

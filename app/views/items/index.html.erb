@@ -1,23 +1,26 @@
 <div class="top-page">
   <%= render "shared/header" %>
-  <form class="search-form" action="#">
-    <input class='input-box form-control ' placeholder='キーワードから探す'>
-    <button class="search-button bg-dark">
-      <%= image_tag "search.png", class:"search-icon" %>
-    </button>
-  </form>
-  
-  <ul class= 'item-lists' >
+  <div>
+    <form class="search-form" action="#">
+      <input class='input-box form-control ' placeholder='キーワードから探す'>
+      <button class="search-button">
+        <%= image_tag "search.png", class:"search-icon" %>
+      </button>
+    </form>
+  </div>
+
+  <div class="item-list">
     <% @items.each do |item| %>
-      <li class='list'>
+      <div class="card shadow-sm">
         <%= link_to item_path(item.id) do %>
-          <div class='item-img-content'>
-            <%= image_tag item.image, class: "item-img" %>
-          </div>
+          <%= image_tag item.image, class: "card-img-top" %>
         <% end %>
-      </li>
+        <div class="card-body">
+          <a href="#" class="btn btn-outline-light">show</a>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
 
   <%= link_to new_item_path ,class: 'purchase-btn' do %>
     <span class='purchase-btn-text'>登録する</span>
