@@ -1,6 +1,6 @@
 .money-counter {
   margin: 0 auto;
-  background-color: rgb(187, 185, 185);
+  background: linear-gradient(to bottom right, rgb(70, 70, 71), rgb(184, 181, 182));
   border-radius: 5px;
   border: 1px solid black;
   width: 80vw;
@@ -45,6 +45,10 @@
   position: absolute;
   top: calc(50vh / 2 - 4vh);
   left: calc(80vw - 7vw);
+}
+
+.calc-btn:focus {
+  box-shadow: none !important;
 }
 
 .calc-btn-icon {

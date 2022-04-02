@@ -56,7 +56,7 @@
 .card-body {
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
-  background-color: #333;
+  background: linear-gradient(to bottom right, rgb(70, 70, 71), rgb(184, 181, 182));
   display: flex;
   align-items: center;
 }

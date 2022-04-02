@@ -15,9 +15,11 @@
         <%= image_tag 'reset.png' ,class: "reset-btn-icon" %>
       <% end %>
     <% end %>
-    <button class="calc-btn btn">
-      <%= image_tag "calculator.png", class:"calc-btn-icon" %>
-    </button>
+    <form action="#">
+      <button class="calc-btn btn" >
+        <%= image_tag "calculator.png", class:"calc-btn-icon"%>
+      </button>
+    </form>
   <% else %>
     <%= link_to new_money_path, class:"money-number" do %>
       <div>---   円</div>
