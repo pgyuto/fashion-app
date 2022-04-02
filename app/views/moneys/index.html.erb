@@ -1,23 +1,26 @@
 <%= render "shared/header" %>
-<% if current_user.money.blank? %>
-<%=link_to '設定',new_money_path, class:"btn btn-secondary info-btn" %>
-<% end %>
-<% if current_user.money.present? %>
-<%=link_to '編集',edit_money_path(@money.id), class:"btn btn-secondary info-btn" %>
-<% end %>
-<div class = "money-counter">
-  <div class = "money-number">
+<div class = "config-btn">
+  <% if current_user.money.blank? %>
+    <%=link_to '設定',new_money_path, class:"btn btn-secondary info-btn" %>
+  <% end %>
   <% if current_user.money.present? %>
-  <%= link_to edit_money_path(@money.id), class:"money-number" do %>
-  <%= @money.balance %> 円
-  <%= link_to money_path(@money.id), method: :delete ,class: 'purchase-btn' do %>
-  <%= image_tag 'shirt.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <%=link_to '編集',edit_money_path(@money.id), class:"btn btn-secondary info-btn" %>
   <% end %>
-  <% end %>
+</div>
+<div class = "money-counter">
+  <% if current_user.money.present? %>
+    <%= link_to edit_money_path(@money.id), class:"money-number" do %>
+      <%= @money.balance %> 円
+      <%= link_to money_path(@money.id), method: :delete ,class: 'reset-btn btn' do %>
+        <%= image_tag 'reset.png' ,class: "reset-btn-icon" %>
+      <% end %>
+    <% end %>
+    <button class="calc-btn btn">
+      <%= image_tag "calculator.png", class:"calc-btn-icon" %>
+    </button>
   <% else %>
-  <%= link_to new_money_path, class:"money-number" do %>
-  <div>---   円</div>
-  <% end %>
-  </div>
+    <%= link_to new_money_path, class:"money-number" do %>
+      <div>---   円</div>
+    <% end %>
   <% end %>
 </div>

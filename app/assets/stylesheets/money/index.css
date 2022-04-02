@@ -1,13 +1,15 @@
 .money-counter {
-  background-color: aliceblue;
-  border: black solid 2px;
-  margin-left: 10vw;
+  margin: 0 auto;
+  background-color: rgb(187, 185, 185);
+  border-radius: 5px;
+  border: 1px solid black;
   width: 80vw;
   height: 50vh;
-  text-align: center;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4)
 }
 
 .money-number {
@@ -16,7 +18,36 @@
   color: black;
 }
 
+.money-number:hover {
+  color:black;
+}
+
+.config-btn {
+  margin: 10vh 0 1vh;
+}
+
 .info-btn {
   margin-left: 10vw;
 }
 
+.reset-btn {
+  position: absolute;
+  top: calc(50vh - 10vh);
+  left: calc(80vw - 7vw);
+}
+
+.reset-btn-icon {
+  width: 5vw;
+  height: 8vh;
+}
+
+.calc-btn {
+  position: absolute;
+  top: calc(50vh / 2 - 4vh);
+  left: calc(80vw - 7vw);
+}
+
+.calc-btn-icon {
+  width: 5vw;
+  height: 8vh;
+}
