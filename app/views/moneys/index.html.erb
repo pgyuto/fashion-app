@@ -16,10 +16,12 @@
       <% end %>
     <% end %>
     <form action="#">
-      <button class="calc-btn btn" >
-        <%= image_tag "calculator.png", class:"calc-btn-icon"%>
-      </button>
+      <input class='balance-box pull-down 'placeholder='キーワードから探す'>
+      <button class="pull-down">a</button>
     </form>
+    <button class="calc-btn btn" id="calc-btn">
+      <%= image_tag "calculator.png", class:"calc-btn-icon"%>
+    </button>
   <% else %>
     <%= link_to new_money_path, class:"money-number" do %>
       <div>---   円</div>
