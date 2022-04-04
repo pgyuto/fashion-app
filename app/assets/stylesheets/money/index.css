@@ -55,3 +55,7 @@
   width: 5vw;
   height: 8vh;
 }
+
+.balance-box {
+  display: none ;
+}
