@@ -1,25 +1,9 @@
 <div class="top-page">
   <%= render "shared/header" %>
-  <div>
-    <form class="search-form" action="#">
-      <input class='input-box form-control ' placeholder='キーワードから探す'>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
-      </button>
-    </form>
-  </div>
+  <%= render "shared/search_box" %>
 
   <div class="item-list">
-    <% @items.each do |item| %>
-      <div class="card shadow-sm">
-        <%= link_to item_path(item.id) do %>
-          <%= image_tag item.image, class: "card-img-top" %>
-        <% end %>
-        <div class="card-body">
-          <%= link_to 'show', item_path(item.id), class:"btn btn-outline-light"%>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'shared/item_list', items: @items %>
   </div>
 
   <%= link_to new_item_path ,class: 'purchase-btn' do %>
