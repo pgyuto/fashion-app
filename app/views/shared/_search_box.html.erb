@@ -1,0 +1,6 @@
+<%= search_form_for @q, url: search_items_path, class:'search-form' do |f| %>
+  <%= f.search_field :color_id_cont, class:'input-box form-control', placeholder:"キーワードから探す" %>
+  <button class="search-button">
+    <%= image_tag "search.png", class:"search-icon" %>
+  </button>
+<% end %>

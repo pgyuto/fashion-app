@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @results = @q.result
+    @results = @q.result.with_attached_image.order('created_at DESC')
   end
 
   private
