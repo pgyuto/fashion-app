@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_q, only: [:index, :search]
   def index
     @items = current_user.items.with_attached_image.order('created_at DESC')
   end
@@ -37,7 +38,15 @@ class ItemsController < ApplicationController
     redirect_to action: :index
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
+
+  def set_q
+    @q = Item.ransack(params[:q])
+  end
 
   def item_params
     params.require(:item).permit(
