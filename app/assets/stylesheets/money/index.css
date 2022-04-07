@@ -1,5 +1,6 @@
 .money-counter {
   margin: 0 auto;
+  margin-top: 20vh;
   background: linear-gradient(to bottom right, rgb(70, 70, 71), rgb(184, 181, 182));
   border-radius: 5px;
   border: 1px solid black;
@@ -19,15 +20,7 @@
 }
 
 .money-number:hover {
-  color:black;
-}
-
-.config-btn {
-  margin: 10vh 0 1vh;
-}
-
-.info-btn {
-  margin-left: 10vw;
+  color: rgb(70, 70, 71);
 }
 
 .reset-btn {
@@ -56,6 +49,7 @@
   height: 8vh;
 }
 
-.balance-box {
-  display: none ;
+
+.calc-area {
+  display: none;
 }

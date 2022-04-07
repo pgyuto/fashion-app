@@ -1,27 +1,17 @@
 <%= render "shared/header" %>
-<div class = "config-btn">
-  <% if current_user.money.blank? %>
-    <%=link_to '設定',new_money_path, class:"btn btn-secondary info-btn" %>
-  <% end %>
-  <% if current_user.money.present? %>
-    <%=link_to '編集',edit_money_path(@money.id), class:"btn btn-secondary info-btn" %>
-  <% end %>
-</div>
 <div class = "money-counter">
   <% if current_user.money.present? %>
     <%= link_to edit_money_path(@money.id), class:"money-number" do %>
-      <%= @money.balance %> 円
-      <%= link_to money_path(@money.id), method: :delete ,class: 'reset-btn btn' do %>
-        <%= image_tag 'reset.png' ,class: "reset-btn-icon" %>
-      <% end %>
+      ￥ <%= @money.balance %>
     <% end %>
-    <form action="#">
-      <input class='balance-box pull-down 'placeholder='キーワードから探す'>
-      <button class="pull-down">a</button>
-    </form>
-    <button class="calc-btn btn" id="calc-btn">
-      <%= image_tag "calculator.png", class:"calc-btn-icon"%>
-    </button>
+    <%= link_to money_path(@money.id), method: :delete ,class: 'reset-btn btn' do %>
+      <%= image_tag 'reset.png' ,class: "reset-btn-icon" %>
+    <% end %>
+    <%=link_to edit_money_path(@money.id) do %>
+      <button class="calc-btn btn" id="calc-btn">
+        <%= image_tag "calculator.png", class:"calc-btn-icon"%>
+      </button>
+    <% end %>
   <% else %>
     <%= link_to new_money_path, class:"money-number" do %>
       <div>---   円</div>

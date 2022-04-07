@@ -8,11 +8,19 @@
     <div class="new-items">
           詳細
           <span class="indispensable">必須</span>
-        <%= f.text_area :balance, class:"items-text", id:"item-info", placeholder:"￥0 ~ ￥999,999 の間で入力可能 (入力例:9999)",rows:"1" ,maxlength:"6" %>
+        <%= f.text_area :balance, class:"items-text", id:"balance-price", placeholder:"￥0 ~ ￥999,999 の間で入力可能 (入力例:9999)",rows:"1" ,maxlength:"6" %>
     </div>
     <div class="sell-btn-contents">
       <%= f.submit "設定" ,class:"sell-btn" %>
       <%=link_to 'もどる', moneys_path, class:"back-btn" %>
     </div>
     <% end %>
+    <button class="calc-btn btn" id="calc-btn">
+      <%= image_tag "calculator.png", class:"calc-btn-icon"%>
+    </button>
+    <div class="calc-area" id = "calc-area">
+    <form>
+      <input type="text" placeholder="NAME" class="amount-price" id="amount-price" maxlength="6" >
+    </form>
+  </div>
 </div>
