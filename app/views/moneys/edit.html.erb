@@ -1,26 +1,32 @@
 <%= render "shared/header" %>
-
-<div class="items-sell-main">
-    <h2 class="items-sell-title">今月は</h2>
+<div class="money-container">
+  <h1 class="money-title">今月は</h1>
     <%= form_with model: @money,url: money_path, local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: f.object %>
-    <div class="new-items">
-          詳細
-          <span class="indispensable">必須</span>
-        <%= f.text_area :balance, class:"items-text", id:"balance-price", placeholder:"￥0 ~ ￥999,999 の間で入力可能 (入力例:9999)",rows:"1" ,maxlength:"6" %>
-    </div>
-    <div class="sell-btn-contents">
-      <%= f.submit "設定" ,class:"sell-btn" %>
-      <%=link_to 'もどる', moneys_path, class:"back-btn" %>
-    </div>
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="price-form">
+      <span class="yen">￥</span><%= f.text_field :balance, class:"form-control price-box",id:"balance-price", placeholder:"￥0 ~ ￥999,999 (入力例:9999)",rows:"1" ,maxlength:"6" %>
+      </div>
+      <div class="price-example">￥0 ~ ￥999,999(例:9999)</div>
+      <%= f.submit "設定", class:"btn btn-outline-dark setting-btn" %>
     <% end %>
+    <%=link_to 'もどる', moneys_path, class:"btn btn-outline-dark back-btn" %>
+</div>
+<div class="items-sell-main">
     <button class="calc-btn btn" id="calc-btn">
       <%= image_tag "calculator.png", class:"calc-btn-icon"%>
     </button>
-    <div class="calc-area" id = "calc-area">
-    <form>
-      <input type="text" placeholder="NAME" class="amount-price" id="amount-price" maxlength="6" >
-    </form>
-  </div>
+</div>
+
+<div class="sample-popup-window">
+	<input type="checkbox" id="sample-popup-switch" />
+	<div class="sample-popup-background"></div>
+	<div class="sample-popup-box">
+		<div class="sample-popup-content">
+			<form>
+      <input type="text" class="amount-price" id="amount-price" maxlength="6" >
+      </form>
+			<label for="sample-popup-switch" class="sample-popup-close">閉じる</label>
+		</div>
+	</div>
 </div>

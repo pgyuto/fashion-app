@@ -1,0 +1,62 @@
+<div class="items-sell-main">
+    <h2 class="items-sell-title">商品の情報を入力</h2>
+    <%= form_with model: @item, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        商品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <div class="new-items">
+          詳細
+          <span class="indispensable">必須</span>
+        <%= f.text_area :text, class:"items-text", id:"item-info",rows:"7" ,maxlength:"1000" %>
+    </div>
+    <div class="items-detail">
+      <div class="weight-bold-text">カテゴリー</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+
+    <div class="items-detail">
+      <div class="weight-bold-text">色</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          色
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+
+    <div class="items-detail">
+      <div class="weight-bold-text">メーカー</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          メーカー
+          <span class="indispensable">任意</span>
+        </div>
+        <%= f.text_field :maker, class:"input-default", id:"building" %>
+      </div>
+    </div>
+    
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>

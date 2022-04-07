@@ -1,13 +1,14 @@
 function calc_price () {
   // 計算ボタン
   const calcBtn = document.getElementById("calc-btn");
-  const calcArea = document.getElementById("calc-area");
+  // const calcArea = document.getElementById("calc-area");
+  const fadeLayer = document.getElementById("fadeLayer");
 
   calcBtn.addEventListener('click', () => {
-    if (calcArea.getAttribute("style") == "display:block;") {
-      calcArea.removeAttribute("style", "display:block;");
+    if (fadeLayer.getAttribute("style") == "visibility:visible;") {
+      fadeLayer.removeAttribute("style", "visibility:visible;");
     } else {
-      calcArea.setAttribute("style", "display:block;");
+      fadeLayer.setAttribute("style", "visibility:visible;");
       
     };
   });

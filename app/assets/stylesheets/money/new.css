@@ -1,0 +1,43 @@
+.money-title {
+  font-size: 60px;
+  margin-top: 20vh;
+  margin-left: 20vw;
+  margin-bottom: 7vh;
+}
+
+.price-form {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.yen {
+  font-size: 50px;
+}
+
+.price-box {
+  height: 7vh;
+  width: 35vw !important;
+  font-size: 50px !important;
+}
+
+.price-example {
+  width: 25vw;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.setting-btn {
+  height: 5vh;
+  width: 14vw;
+  margin-left: calc(50vw - 7vw);
+  margin-top: 10vh;
+}
+
+.back-btn {
+  height: 5vh;
+  width: 26vw;
+  margin-top: 10vh;
+  margin-left: calc(50vw - 13vw);
+}
