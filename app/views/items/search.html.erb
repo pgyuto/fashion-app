@@ -4,3 +4,11 @@
 <div class="item-list">
   <%= render 'shared/item_list', items: @results %>
 </div>
+<%= link_to new_item_path ,class: 'purchase-btn' do %>
+  <span class='purchase-btn-text'>登録する</span>
+  <%= image_tag 'shirt.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+<%= link_to moneys_path ,class: 'purchase-btn2' do %>
+  <span class='purchase-btn-text'>残高</span>
+  <%= image_tag 'wallet.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
