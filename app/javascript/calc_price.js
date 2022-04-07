@@ -1,20 +1,24 @@
 function calc_price () {
-  // 計算ボタン
   const calcBtn = document.getElementById("calc-btn");
-  // const calcArea = document.getElementById("calc-area");
-  const fadeLayer = document.getElementById("fadeLayer");
-
+  const calcArea = document.getElementById("sample-popup-content");
+  const fadeLayer = document.getElementById("sample-popup-background");
+  const amountPrice = document.getElementById("amount-price");
+  
+  // 計算ボタン
   calcBtn.addEventListener('click', () => {
-    if (fadeLayer.getAttribute("style") == "visibility:visible;") {
-      fadeLayer.removeAttribute("style", "visibility:visible;");
-    } else {
-      fadeLayer.setAttribute("style", "visibility:visible;");
+    if (fadeLayer.getAttribute("style") == "display:block;") {
+      fadeLayer.removeAttribute("style", "display:block;");
+      calcArea.removeAttribute("style", "display:block;");
       
+    } else {
+      fadeLayer.setAttribute("style", "display:block;");
+      calcArea.setAttribute("style", "display:block;");
+      amountPrice.focus();
     };
   });
 
   // 計算機能
-  const amountPrice = document.getElementById("amount-price");
+  
   const balancePrice = document.getElementById("balance-price");
   const balancePriceValue = balancePrice.value;
   amountPrice.addEventListener('input', () => {

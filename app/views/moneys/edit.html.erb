@@ -5,7 +5,7 @@
 
       <%= render 'shared/error_messages', model: f.object %>
       <div class="price-form">
-      <span class="yen">￥</span><%= f.text_field :balance, class:"form-control price-box",id:"balance-price", placeholder:"￥0 ~ ￥999,999 (入力例:9999)",rows:"1" ,maxlength:"6" %>
+      <span class="yen">￥</span><%= f.text_field :balance, class:"form-control price-box",id:"balance-price",rows:"1" ,maxlength:"6" %>
       </div>
       <div class="price-example">￥0 ~ ￥999,999(例:9999)</div>
       <%= f.submit "設定", class:"btn btn-outline-dark setting-btn" %>
@@ -19,14 +19,13 @@
 </div>
 
 <div class="sample-popup-window">
-	<input type="checkbox" id="sample-popup-switch" />
-	<div class="sample-popup-background"></div>
+	<div class="sample-popup-background" id="sample-popup-background"></div>
 	<div class="sample-popup-box">
-		<div class="sample-popup-content">
-			<form>
-      <input type="text" class="amount-price" id="amount-price" maxlength="6" >
+		<div class="sample-popup-content" id="sample-popup-content">
+			<form onsubmit="return false;">
+      <input type="text" class="amount-price form-control" id="amount-price" maxlength="6">
+      <span class="price-comment">円使うぜ。。。</span>
       </form>
-			<label for="sample-popup-switch" class="sample-popup-close">閉じる</label>
 		</div>
 	</div>
 </div>

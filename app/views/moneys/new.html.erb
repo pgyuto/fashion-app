@@ -5,7 +5,7 @@
 
       <%= render 'shared/error_messages', model: f.object %>
       <div class="price-form">
-      <span class="yen">￥</span><%= f.text_field :balance, class:"form-control price-box",id:"balance-price",rows:"1" ,maxlength:"6" %>
+      <span class="yen">￥</span><%= f.text_field :balance, class:"form-control price-box",id:"balance-price",rows:"1" ,maxlength:"6",autofocus: true %>
       </div>
       <div class="price-example">￥0 ~ ￥999,999(例:9999)</div>
       <%= f.submit "設定", class:"btn btn-outline-dark setting-btn" %>
