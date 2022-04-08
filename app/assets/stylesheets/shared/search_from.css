@@ -1,0 +1,40 @@
+.search {
+  width: 80vw;
+  display: flex;
+  padding-top: 3vh;
+  margin: 0 auto;
+}
+
+.small-search {
+  width: 73vw;
+  margin:1vh auto ;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.small-search span {
+  margin-left: 3vw;
+}
+
+.input-box {
+  width: 15vw !important;
+  margin-left: 5vw;
+}
+
+.search-button {
+  width: 5vh;
+  border: 0;
+  margin-left:0.5vw;
+  border-radius: 10%;
+  background-color: rgba(0,0,0,0.4);
+  transition: all 0.3s;
+}
+
+.search-button:hover {
+  background-color: black;
+}
+
+.search-icon {
+  width: 100%;
+}

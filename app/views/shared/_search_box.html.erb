@@ -1,20 +1,19 @@
 <%= search_form_for @q, url: search_items_path, class:'search-form' do |f| %>
-  <%= f.search_field :text_or_maker_cont, class:'input-box form-control', placeholder:"キーワードから探す" %>
-  <button class="search-button">
-    <%= image_tag "search.png", class:"search-icon" %>
-  </button>
+  <div class="search">
+    <%= f.search_field :text_or_maker_cont, class:'form-control', placeholder:"キーワードから探す (詳細、ブランド)" %>
+    <button class="search-button">
+      <%= image_tag "search.png", class:"search-icon" %>
+    </button>
+  </div>
+  <div class="small-search">
+    <div class="category-search">
+      <span>カテゴリー</span>
+      <%= f.collection_select(:category_id_eq,Category.where.not(id: 1),:id,:name,{include_blank: '指定なし'},{class: "input-box form-control"})%>
+    </div>
+    <div class="color-search">
+      <span>カラー</span>
+      <%= f.collection_select(:color_id_eq,Color.where.not(id: 1),:id,:name,{include_blank: '指定なし'},{class: "input-box form-control"})%>
+    </div>
+  </div>
 <% end %>
 
-<%= search_form_for @q, url: search_items_path, class:'search-form' do |f| %>
-  <%= f.collection_select(:category_id_eq,Category.all,:id,:name,{},{class: "input-box form-control"})%>
-  <button class="search-button">
-    <%= image_tag "search.png", class:"search-icon" %>
-  </button>
-<% end %>
-
-<%= search_form_for @q, url: search_items_path, class:'search-form' do |f| %>
-  <%= f.collection_select(:color_id_eq,Color.all,:id,:name,{},{class: "input-box form-control"})%>
-  <button class="search-button">
-    <%= image_tag "search.png", class:"search-icon" %>
-  </button>
-<% end %>

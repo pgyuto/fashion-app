@@ -14,10 +14,10 @@
       <%= f.file_field :image, id:"item-image" %>
     </div>
   </div>
-  <div class="new-items">
+  <div class="weight-bold-text">
         詳細
         <span class="indispensable">必須</span>
-      <%= f.text_area :text, class:"items-text", id:"item-info",rows:"7" ,maxlength:"1000" %>
+      <%= f.text_area :text, class:"items-text form-control", id:"item-info",rows:"7" ,maxlength:"1000" %>
   </div>
   <div class="items-detail">
     <div class="weight-bold-text">カテゴリー</div>
@@ -26,18 +26,18 @@
         カテゴリー
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box form-control", id:"item-category"}) %>
     </div>
   </div>
 
   <div class="items-detail">
-    <div class="weight-bold-text">色</div>
+    <div class="weight-bold-text">カラー</div>
     <div class="form">
       <div class="weight-bold-text">
-        色
+        カラー
         <span class="indispensable">必須</span>
       </div>
-      <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <%= f.collection_select(:color_id, Color.all, :id, :name, {}, {class:"select-box form-control", id:"item-category"}) %>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
       <div class="weight-bold-text">
         ブランド
       </div>
-      <%= f.text_field :maker, class:"maker-form" %>
+      <%= f.text_field :maker, class:"maker-form form-control" %>
     </div>
   </div>
   

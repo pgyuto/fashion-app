@@ -18,14 +18,21 @@
 	z-index: 1100;
 	background: #fff;
 	padding: 2%;
-	top: 50%;
+	top: 65%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	overflow-y: scroll;
 }
 
-.calc-btn {
+.balance-btn {
+	position: absolute;
+  top: 45.5vh ;
+  left: 69vw;
   z-index: 1100;
+}
+
+.balance-btn:focus {
+  box-shadow: none !important;
 }
 
 .price-comment {

@@ -38,7 +38,6 @@
 .item-list {
   width: 100vw;
   display: flex;
-  padding-top: 5vh;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -59,38 +58,4 @@
   background: linear-gradient(to bottom right, rgb(70, 70, 71), rgb(184, 181, 182));
   display: flex;
   align-items: center;
-}
-
-/* 検索フォーム */
-
-.search-form {
-  width: 80vw;
-  height: 5vh;
-  display: flex;
-  padding-top: 3vh;
-  margin: 0 auto;
-}
-
-.input-box {
-  width: 100%;
-  height: 5vh;
-  padding-left: 10px;
-}
-
-.search-button {
-  width: 5vh;
-  height: 5vh;
-  border: 0;
-  margin-left: 0.5vw;
-  border-radius: 10%;
-  background-color: rgba(0,0,0,0.4);
-  transition: all 0.3s;
-}
-
-.search-button:hover {
-  background-color: black;
-}
-
-.search-icon {
-  width: 100%;
 }
