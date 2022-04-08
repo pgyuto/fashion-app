@@ -35,9 +35,10 @@
   margin-top: 10vh;
 }
 
-.back-btn {
+.back-btn-money {
   height: 5vh;
   width: 26vw;
   margin-top: 10vh;
   margin-left: calc(50vw - 13vw);
+  padding: 15px 35%;
 }

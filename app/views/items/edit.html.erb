@@ -1,3 +1,7 @@
 <%= render "shared/header" %>
-
-<%= render "shared/registration-edit" %>
+<div class="items-sell-main">
+  <%= render "shared/registration-edit" %>
+  <div class="sell-btn-contents">
+    <%=link_to 'もどる', item_path(@item.id), class:"back-btn btn btn-outline-dark" %>
+  </div>
+</div>
