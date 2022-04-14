@@ -20,22 +20,22 @@ RSpec.describe Money, type: :model do
       it 'balanceが半角数字でない場合' do
         @money.balance = '１００'
         @money.valid?
-        expect(@money.errors.full_messages).to include("Balance を半角数字のみで入力してください")
+        expect(@money.errors.full_messages).to include('Balance を半角数字のみで入力してください')
       end
       it 'balanceが0以下の場合' do
         @money.balance = -100
         @money.valid?
-        expect(@money.errors.full_messages).to include("Balance を¥0〜9,999,999で入力してください")
+        expect(@money.errors.full_messages).to include('Balance を¥0〜9,999,999で入力してください')
       end
       it 'balanceが999,999以上の場合' do
-        @money.balance = 1000000
+        @money.balance = 1_000_000
         @money.valid?
-        expect(@money.errors.full_messages).to include("Balance を¥0〜9,999,999で入力してください")
+        expect(@money.errors.full_messages).to include('Balance を¥0〜9,999,999で入力してください')
       end
       it 'userが紐づいていない場合' do
         @money.user = nil
         @money.valid?
-        expect(@money.errors.full_messages).to include("User must exist")
+        expect(@money.errors.full_messages).to include('User must exist')
       end
     end
   end
