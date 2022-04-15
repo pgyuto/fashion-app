@@ -22,3 +22,18 @@
   margin: 3vh 0 5vh;
 }
 
+@media (max-width: 599px) {
+ .title {
+   font-size: 100px;
+   height: 40vh;
+   padding-top: 10vh;
+ }
+ .register-list {
+  width: 40vw;
+  margin: 30vh auto 0;
+}
+
+.login-btn {
+  margin: 3vh 0 5vh;
+}
+}
