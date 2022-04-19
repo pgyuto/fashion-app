@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :favorite, only: [:create, :destroy]
   end
   resources :moneys, only: [:index, :new, :create, :edit, :update, :destroy]
 end
