@@ -5,6 +5,9 @@
     <% end %>
     <div class="card-body">
       <%= link_to 'show', item_path(item.id), class:"btn btn-outline-light"%>
+      <div class='star-btn'>
+        <%= image_tag "star.png", class:"star-icon" %>
+      </div>
     </div>
   </div>
 <% end %>
