@@ -6,12 +6,12 @@
     <div class="card-body">
       <%= link_to 'show', item_path(item.id), class:"btn btn-outline-light"%>
       <% if !Favorite.exists?(user: current_user, item_id: item.id)%>
-        <%= link_to item_favorites_path(item.id), method: :post, class:"star-btn" do %>
+        <%= link_to item_favorites_path(item.id), method: :post, class:"star-btn favorite-post" do %>
           <%= image_tag "star.png", class:"star-icon" %>
         <% end %>
       <% else %>
         <%= link_to item_favorites_path(item.id), method: :delete, class:"star-btn" do %>
-          <%= image_tag "star.png", class:"star-icon" %>
+          <%= image_tag "star.png", class:"star-icon favorite-delete" %>
         <% end %>
       <% end %>
     </div>
