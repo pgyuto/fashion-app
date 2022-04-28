@@ -1,6 +1,6 @@
 <div class="top-page">
   <%= render "shared/header" %>
-  <%= render "shared/search_box" %>
+  <%= render "shared/search_box", {q: @q} %>
 
   <div class="item-list">
     <%= render 'shared/item_list', items: @items %>
