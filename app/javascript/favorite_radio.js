@@ -1,7 +1,7 @@
 function favorite_radio (){
   const favoriteBtn = document.getElementById('favorite-btn');
   favoriteBtn.addEventListener('click',() => {
-    let state = favoriteBtn.dataset.status;
+    const state = favoriteBtn.dataset.status;
     //data-statusが1で、ラジオボタンがchecked状態で解除
     if( state == "1" && favoriteBtn.checked == true ){
       favoriteBtn.checked = false;

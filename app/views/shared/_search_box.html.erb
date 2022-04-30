@@ -14,7 +14,7 @@
       <span>カラー</span>
       <%= f.collection_select(:color_id_eq,Color.where.not(id: 1),:id,:name,{include_blank: '指定なし'},{class: "input-box form-control"})%>
     </div>
-    <div>
+    <div class= "favorite-search">
       <%= f.radio_button :favorite_id_not_null, true, id: "favorite-btn"%>お気に入り
     </div>
   </div>
