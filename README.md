@@ -5,7 +5,7 @@ Fashion
 自分が持っている服の管理（色、種類、ブランド）をすることができ、さらに毎月使用金額を入力することで、月の使用金額を管理することができます。
 
 # URL
-https://fashion-app-37606.herokuapp.com/ (一定時間過ぎた画像は表示されなくなります。)
+https://fashion-app-37606.herokuapp.com/ 
 
 # テスト用用アカウント
 - Basic認証パスワード：2222
